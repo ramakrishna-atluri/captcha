@@ -20,8 +20,8 @@ app.post('/submitForm', function (req, res) {
 
 superagent.post(captchaVerifyURL)
         .send({ secret: captchaServerKey, response: captchaToken })
-        .then( ()=> res.redirect('/home'))
-        .catch(()=> res.redirect('/error'));
+        .then( ()=> res.redirect('/home.html'))
+        .catch(()=> res.redirect('/error.html'));
   });
 
 var server = app.listen(process.env.PORT);
