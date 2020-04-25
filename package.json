@@ -1,0 +1,23 @@
+{
+  "name": "captcha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-prod": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramakrishna-atluri/captcha.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramakrishna-atluri/captcha/issues"
+  },
+  "homepage": "https://github.com/ramakrishna-atluri/captcha#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
