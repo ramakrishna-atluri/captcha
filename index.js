@@ -21,9 +21,7 @@ app.post('/submitForm', function (req, res) {
 
 superagent.post(captchaVerifyURL)
          .then( (apiResponse)=>{
-               console.log(apiResponse);
-            if(apiResponse.success){
-               console.log('google accepted key');
+            if(apiResponse.statusCode == 200){
                 res.redirect('/home.html');
             }else{
                console.log('google rejected key' + apiResponse['error-codes']);
