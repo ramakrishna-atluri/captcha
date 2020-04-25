@@ -22,6 +22,7 @@ superagent.post(captchaVerifyURL)
         .send({ secret: captchaServerKey, response: captchaToken })
         .then( (apiResponse)=>{
             if(apiResponse.success){
+               console.log(apiResponse);
                 res.redirect('/home.html');
             }else{ res.redirect('/error.html'); }
         } )
