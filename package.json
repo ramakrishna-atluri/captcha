@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/ramakrishna-atluri/captcha#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "superagent": "^3.5.2"
   },
   "engines": {
     "node": "10.x"
