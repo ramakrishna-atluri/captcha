@@ -20,7 +20,11 @@ app.post('/submitForm', function (req, res) {
 
 superagent.post(captchaVerifyURL)
         .send({ secret: captchaServerKey, response: captchaToken })
-        .then( ()=> res.redirect('/home.html'))
+        .then( (apiResponse)=>{
+            if(apiResponse.success){
+                res.redirect('/home.html');
+            }else{ res.redirect('/error.html'); }
+        } )
         .catch(()=> res.redirect('/error.html'));
   });
 
