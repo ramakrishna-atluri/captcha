@@ -19,14 +19,21 @@ app.post('/submitForm', function (req, res) {
    let captchaServerKey = '6Le88e0UAAAAAFjNaQEnqFhfaiRfx-IGCqQ1UdBg';
 
 superagent.post(captchaVerifyURL)
-        .send({ secret: captchaServerKey, response: captchaToken })
-        .then( (apiResponse)=>{
+         .set('Content-Type', 'application/json')
+         .send({ secret: captchaServerKey, response: captchaToken })
+         .then( (apiResponse)=>{
                console.log(apiResponse);
             if(apiResponse.success){
+               console.log('google accepted key');
                 res.redirect('/home.html');
-            }else{ res.redirect('/error.html'); }
+            }else{
+               console.log('google rejected key' + apiResponse['error-codes']);
+               res.redirect('/error.html'); }
         } )
-        .catch(()=> res.redirect('/error.html'));
+        .catch(()=>{
+               console.log('error loading the api response');
+               res.redirect('/error.html')
+        });
   });
 
 var server = app.listen(process.env.PORT);
